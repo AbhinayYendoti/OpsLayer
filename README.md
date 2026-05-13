@@ -1,4 +1,4 @@
-# Libra AI Coworker
+# OpsLayer- AI Coworker
 
 Production-ready multi-agent AI Coworker demo with a Next.js frontend on Vercel
 and a FastAPI backend on Render. The app turns natural language requests into
