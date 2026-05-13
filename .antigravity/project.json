@@ -1,0 +1,52 @@
+{
+  "name": "Libra AI Coworker Demo",
+  "version": "1.0.0",
+  "description": "Multi-agent AI coworker demo — CrewAI + Reflex",
+  "entrypoint": "libra_app/libra_app.py",
+  "language": "python",
+  "framework": "reflex",
+  "run_command": "reflex run",
+  "install_command": "pip install -r requirements.txt",
+  "env_file": ".env",
+  "env_example": ".env.example",
+  "ports": {
+    "frontend": 3000,
+    "backend": 8000
+  },
+  "modules": [
+    {
+      "name": "Frontend (UI)",
+      "files": ["libra_app/libra_app.py", "libra_app/components/"],
+      "agent": "Frontend Specialist"
+    },
+    {
+      "name": "Agent Orchestration",
+      "files": ["libra_app/agents/"],
+      "agent": "Agent Orchestration Specialist",
+      "prd": "docs/03_module_prds/agent_orchestration.md"
+    },
+    {
+      "name": "Tool Integrations",
+      "files": ["libra_app/tools/"],
+      "agent": "Tool Integrations Specialist",
+      "prd": "docs/03_module_prds/tool_integrations.md"
+    },
+    {
+      "name": "Safety & Guardrails",
+      "files": ["libra_app/state/app_state.py", "libra_app/components/approval_modal.py"],
+      "agent": "Safety Specialist",
+      "prd": "docs/03_module_prds/safety_and_guardrails.md"
+    },
+    {
+      "name": "Memory & Context",
+      "files": ["libra_app/state/"],
+      "agent": "Memory Specialist",
+      "prd": "docs/03_module_prds/memory_and_context.md"
+    }
+  ],
+  "docs": {
+    "master_prd": "docs/01_master_prd/master_prd.md",
+    "architecture": "docs/02_architecture/architecture.md",
+    "module_prds": "docs/03_module_prds/"
+  }
+}
