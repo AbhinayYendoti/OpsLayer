@@ -1,0 +1,5 @@
+# Force LF line endings for Render config files
+runtime.txt text eol=lf
+.python-version text eol=lf
+requirements.txt text eol=lf
+Procfile text eol=lf
